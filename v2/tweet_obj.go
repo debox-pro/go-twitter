@@ -42,6 +42,8 @@ const (
 	TweetFieldSource TweetField = "source"
 	// TweetFieldWithHeld contains withholding details
 	TweetFieldWithHeld TweetField = "withheld"
+	// TweetFieldNoteText return original text more than 280 characters
+	TweetFieldNoteTweet TweetField = "note_tweet"
 )
 
 func tweetFieldStringArray(arr []TweetField) []string {
@@ -73,6 +75,7 @@ type TweetObj struct {
 	ReferencedTweets   []*TweetReferencedTweetObj   `json:"referenced_tweets,omitempty"`
 	Source             string                       `json:"source,omitempty"`
 	WithHeld           *WithHeldObj                 `json:"withheld,omitempty"`
+	NoteTweet          *NoteTweetObj                `json:"note_tweet,omitempty"`
 }
 
 // TweetAttachmentsObj specifics the type of attachment present in the tweet
@@ -121,4 +124,9 @@ type TweetMetricsObj struct {
 type TweetReferencedTweetObj struct {
 	Type string `json:"type"`
 	ID   string `json:"id"`
+}
+
+type NoteTweetObj struct {
+	Text     string       `json:"text"`
+	Entities *EntitiesObj `json:"entities,omitempty"`
 }
