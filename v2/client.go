@@ -34,7 +34,7 @@ const (
 	quoteTweetMaxResults                            = 100
 	quoteTweetMinResults                            = 10
 	tweetBookmarksMaxResults                        = 100
-	userTweetTimelineMinResults                     = 5
+	userTweetTimelineMinResults                     = 1
 	userTweetTimelineMaxResults                     = 100
 	userMentionTimelineMinResults                   = 5
 	userMentionTimelineMaxResults                   = 100
@@ -45,9 +45,9 @@ const (
 
 // Client is used to make twitter v2 API callouts.
 //
-// Authorizer is used to add auth to the request
+// # Authorizer is used to add auth to the request
 //
-// Client is the HTTP client to use for all requests
+// # Client is the HTTP client to use for all requests
 //
 // Host is the base URL to use like, https://api.twitter.com
 type Client struct {
